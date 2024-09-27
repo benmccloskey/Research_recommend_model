@@ -246,7 +246,7 @@ class dataprocessor:
 
 
   @staticmethod
-  def data_reader(list_file_names):
+  def data_reader(list_file_names,file_dict=dict()):
     """A function that reads in the data from a directory of files.
 
     Inputs:
@@ -289,7 +289,6 @@ class dataprocessor:
       
       text = reader.preprocess(text)
       text_list.append(text)
-      file_dict = dict()
       for i,file in enumerate(list_file_names):
         file_dict[i] = (file, file.split('/')[-1])
     return text_list, file_dict
